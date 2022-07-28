@@ -25,6 +25,8 @@ bookmark.addEventListener('click', () => {
 
 // Selection modal
 
+const rewardBtns = document.querySelectorAll(".reward-btn")
+console.log(rewardBtns)
 const main = document.querySelector('.main');
 const backProjectBtn = document.querySelector('.support-btn');
 const selectionModal = document.querySelector('.selection-modal');
@@ -43,16 +45,53 @@ let showModal = () => {
 
 backProjectBtn.addEventListener('click', showModal);
 
+rewardBtns.forEach(rewardBtn => {
+    rewardBtn.addEventListener('click', showModal);
+})
+
+
 // Selection Modal Radio Button
 
-const radioButton = document.querySelectorAll(".selection-modal-article-circle");
-console.log(radioButton);
-const radioButtonBg = document.querySelectorAll(".selection-modal-article-circle-bg");
-console.log(radioButtonBg);
+const radioButtons = document.querySelectorAll(".selection-modal-article-circle");
+console.log(radioButtons);
+const radioButtonBgs = document.querySelectorAll(".selection-modal-article-circle-bg");
+console.log(radioButtonBgs);
+const selectedPledges = document.querySelectorAll('.selected-pledge');
+console.log(selectedPledges);
 
-radioButton.forEach((element) => {
-    element.addEventListener('click', (element) => {
-        console.log(element.firstElementChild);
-        // element.firstElementChild.classList.add('active');
+
+radioButtons.forEach((btn) => {
+    btn.addEventListener('click', () => {
+        btn.classList.toggle('active');
+        radioButtonBgs.forEach(bgBtn => {
+            if (bgBtn.parentElement.classList.contains('active')) {
+                bgBtn.classList.add('active');
+            } else {
+                bgBtn.classList.remove('active');
+            }
+        });
     });
+});
+
+// Success Modal
+
+const successModal = document.querySelector('.success-modal');
+const successBtn = document.querySelector('.success-modal__btn');
+const openSuccessBtns = document.querySelectorAll('.selected-pledge__btn');
+
+const showSuccess = () => {
+    successModal.classList.add('active');
+    successModal.style.display = 'block';
+    selectionModal.classList.add('hidden');
+    selectionModal.classList.remove('active');
+}
+
+openSuccessBtns.forEach(openSuccessBtn => {
+    openSuccessBtn.addEventListener('click', showSuccess)
 })
+
+const hideSuccessModal = () => {
+    successModal.style.display = 'none';
+}
+
+successBtn.addEventListener('click', hideSuccessModal);
