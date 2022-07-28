@@ -6,13 +6,15 @@
   
   <title>Crowdfunding product page</title>
 
-  <!-- <link href="https://cdn.jsdelivr.net/npm/remixicon@2.5.0/fonts/remixicon.css" rel="stylesheet"> -->
+  <link href="https://cdn.jsdelivr.net/npm/remixicon@2.5.0/fonts/remixicon.css" rel="stylesheet">
   <link rel="stylesheet" href="css/styles.css">
 
   <script src="js/main.js" defer></script>
 
 </head>
 <body>
+
+  <div class="overlay hidden" id="overlay"></div>
 
   <header class="header">
 
@@ -30,14 +32,22 @@
         <a href="#" class="nav__link">Get Started</a>
       </nav>
 
-      <div class="toggle-container active"></div>
+      <div class="toggle-container"></div>
     </div>
+
+    <nav class="nav-mobile hidden" id="nav-mobile">
+      <div class="nav-mobile-container container">
+        <a href="#" class="nav-mobile__link">About</a>
+        <a href="#" class="nav-mobile__link">Discover</a>
+        <a href="#" class="nav-mobile__link">Get Started</a>
+      </div>
+    </nav>
 
   </header>
 
-  <main class="main container">
-
-    <section class="entrance border-radius">
+  <main class="main container border-radius">
+    <div class="second-overlay hidden" id="second-overlay"></div>
+    <section class="entrance border-radius box-shadow-gray">
 
       <div class="icon-container">
         <img src="images/logo-mastercraft.svg" alt="logo-mastercraft">
@@ -64,7 +74,7 @@
 
     </section>
 
-    <section class="stats border-radius">
+    <section class="stats border-radius box-shadow-gray">
       <div class="stats-container">
       <div class="stat stat1">
         <p class="stat__number">$89,914</p>
@@ -90,7 +100,7 @@
 
     </section>
 
-    <section class="project border-radius">
+    <section class="project border-radius box-shadow-gray">
       <h2 class="project__title">About this project</h2>
       <p class="project__text">The Mastercraft Bamboo Monitor Riser is a sturdy and stylish platform that elevates your screen 
         to a more comfortable viewing height. Placing your monitor at eye level has the potential to improve 
@@ -98,7 +108,7 @@
       <p class="project__text">Featuring artisan craftsmanship, the simplicity of design creates extra desk space below your computer 
         to allow notepads, pens, and USB sticks to be stored under the stand.</p>
       
-      <article class="reward">
+      <article class="reward box-shadow-card">
 
         <div class="reward-title-container">
           <h3 class="reward__title">Bamboo Stand</h3>
@@ -119,7 +129,7 @@
         
       </article>
 
-      <article class="reward">
+      <article class="reward box-shadow-card">
         <div class="reward-title-container">
           <h3 class="reward__title">Black Edition Stand</h3>
           <p class="reward__subtitle">Pledge $75 or more</p>
@@ -139,7 +149,7 @@
 
       </article>
 
-      <article class="reward reward--mod">
+      <article class="reward reward--mod box-shadow-card">
         <div class="reward-title-container">
           <h3 class="reward__title">Mahogany Special Edition</h3>
           <p class="reward__subtitle">Pledge $200 or more</p>
@@ -157,7 +167,7 @@
       </article>
     </section>
 
-    <section class="selection-modal border-radius">
+    <section class="selection-modal border-radius box-shadow-gray">
 
       <div class="selection-modal-container container">
 
@@ -173,11 +183,11 @@
 
         <div class="selection-modal-articles-container">
 
-          <article class="selection-modal-article selection-modal-article--first">
+          <article class="selection-modal-article selection-modal-article-one box-shadow-card">
 
             <div class="selection-modal-article-header">
-              <div class="selection-modal-article-circle">
-                <div class="selection-modal-article-circle-bg"></div>
+              <div class="selection-modal-article-circle selection-modal-article-circle-1">
+                <div class="selection-modal-article-circle-bg selection-modal-article-circle-bg-1"></div>
               </div>
               <h3 class="selection-modal-article__title">Pledge with no reward</h3>
             </div>
@@ -185,7 +195,7 @@
             <p class="selection-modal-article__text">Choose to support us without a reward if you simply believe in our project. As a backer, 
               you will be signed up to receive product updates via email.</p>
 
-              <div class="selected-pledge">
+              <div class="selected-pledge selected-pledge-1 hidden">
                 <div class="selected-pledge-container">
                   <div class="selected-pledge-btn-container">
                     <a href="#" class="selected-pledge__btn selected-pledge__btn--mod btn">Continue</a>
@@ -194,11 +204,11 @@
               </div>
           </article>
 
-          <article class="selection-modal-article">
+          <article class="selection-modal-article selection-modal-article-two box-shadow-card">
 
             <div class="selection-modal-article-header">
-              <div class="selection-modal-article-circle">
-                <div class="selection-modal-article-circle-bg"></div>
+              <div class="selection-modal-article-circle selection-modal-article-circle-2">
+                <div class="selection-modal-article-circle-bg selection-modal-article-circle-bg-2"></div>
               </div>
               <div class="selection-modal-article-title-container">
                 <h3 class="selection-modal-article__title">Bamboo Stand</h3>
@@ -214,7 +224,7 @@
             </div>
 
 
-            <div class="selected-pledge">
+            <div class="selected-pledge selected-pledge-2 hidden">
               <div class="selected-pledge-container">
                 <p class="selected-pledge__text">Enter your pledge</p>
                 <div class="selected-pledge-input-container">
@@ -231,12 +241,12 @@
 
           </article>
 
-          <article class="selection-modal-article">
+          <article class="selection-modal-article selection-modal-article-three box-shadow-card">
 
             <div class="selection-modal-article-header">
 
-              <div class="selection-modal-article-circle">
-                <div class="selection-modal-article-circle-bg"></div>
+              <div class="selection-modal-article-circle selection-modal-article-circle-3">
+                <div class="selection-modal-article-circle-bg selection-modal-article-circle-bg-3"></div>
               </div>
 
               <div class="selection-modal-article-title-container">
@@ -254,7 +264,7 @@
             </div>
 
 
-            <div class="selected-pledge">
+            <div class="selected-pledge selected-pledge-3 hidden">
               <div class="selected-pledge-container">
                 <p class="selected-pledge__text">Enter your pledge</p>
                 <div class="selected-pledge-input-container">
@@ -271,7 +281,7 @@
 
           </article>
 
-          <article class="selection-modal-article selection-modal-article--mod">
+          <article class="selection-modal-article selection-modal-article--mod box-shadow-card">
 
             <div class="selection-modal-article-header">
               <div class="selection-modal-article-circle">
@@ -297,7 +307,7 @@
 
     </section>
 
-    <section class="success-modal border-radius hidden">
+    <section class="success-modal border-radius hidden box-shadow-gray">
       <div class="success-modal-container container">
         <div class="icon-check-container">
           <img src="./images/icon-check.svg" alt="check icon">
@@ -312,7 +322,9 @@
   </main>
 
   <footer class="footer container">
-    <p class="me"><i>By Marcos Fitzsimons <a href="#">#githubicon</a></i></p>
+    <p class="me box-shadow-card">By Marcos Fitzsimons <a href="https://github.com/Marcosfitzsimons" target="_blank"> <i class="ri-github-fill"></i> </a></p>
   </footer>
+
+
 </body>
 </html>
