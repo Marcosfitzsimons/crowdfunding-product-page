@@ -104,7 +104,7 @@ p {
 .btn {
   color: white;
   background-color: var(--moderateCyan);
-  padding: 2rem 5rem;
+  padding: 2rem 4rem;
   border-radius: 5rem;
   font-weight: 500;
 }
@@ -132,6 +132,7 @@ p {
 
 .bookmark-container.active {
   background-color: hsl(180, 47%, 97%);
+  width: 18rem;
 }
 
 .bookmark-text.active {
@@ -239,6 +240,10 @@ p {
   position: relative;
   bottom: 5rem;
   max-width: 80rem;
+  z-index: 5;
+}
+
+.main.active {
 }
 
 .entrance,
@@ -462,6 +467,14 @@ p {
   padding: 2rem 0;
   max-width: 80rem;
   margin: 0 auto;
+  display: none;
+}
+
+.selection-modal.active {
+  display: block;
+  position: absolute;
+  top: -15rem;
+  left: 0;
 }
 
 .selection-modal-header-container {
@@ -507,6 +520,21 @@ p {
   border-radius: 50%;
   border: 1px solid lightgray;
   cursor: pointer;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.selection-modal-article-circle-bg {
+  display: none;
+}
+
+.selection-modal-article-circle-bg.active {
+  display: block;
+  background-color: var(--moderateCyan);
+  border-radius: 50%;
+  height: 1.4rem;
+  aspect-ratio: 1;
 }
 
 .selection-modal-article-title-container {
